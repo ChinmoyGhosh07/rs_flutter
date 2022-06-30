@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "ProductId": "1",
+      "DisplayName": "ABC",
+      "MRP": "100",
+      "ProductImage": ""
+    },
+    {
+      "ProductId": "2",
+      "DisplayName": "BCD",
+      "MRP": "200",
+      "ProductImage": ""
+    },
+    {
+      "ProductId": "3",
+      "DisplayName": "CDE",
+      "MRP": "300",
+      "ProductImage": ""
+    },
+    {
+      "ProductId": "4",
+      "DisplayName": "DEF",
+      "MRP": "400",
+      "ProductImage": ""
+    }
+  ]
+}
