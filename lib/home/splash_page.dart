@@ -4,8 +4,10 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:retailershakti_flutter/home/home_page.dart';
-import 'package:retailershakti_flutter/login/login_page.dart';
+import 'package:retailershakti_flutter/login/presentation/login_page.dart';
 import 'package:retailershakti_flutter/shared_preferences/shared_preferences.dart';
+
+import '../utils/routes.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -46,10 +48,11 @@ class _SplashPageState extends State<SplashPage> {
     final isOnBoarded = await isUserOnBoarded();
     log('isUserOnBoarded : $isOnBoarded');
     if(isOnBoarded) {
-      Navigator.pushReplacement(context, MaterialPageRoute(
+      Navigator.pushNamed(context,MyRoutes.homeRoute);
+      /*Navigator.pushReplacement(context, MaterialPageRoute(
           builder: (context) => LoginPage()
       )
-      );
+      );*/
     } else {
       Navigator.pushReplacement(context, MaterialPageRoute(
           builder: (context) => HomePage()

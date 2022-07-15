@@ -2,9 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:retailershakti_flutter/live_cart/presentation/live_cart_page.dart';
+import 'package:retailershakti_flutter/utils/routes.dart';
 
 import '../models/catalog.dart';
 import '../widgets/drawer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -30,6 +33,21 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+  moveToCart(){
+    Navigator.pushNamed(context,MyRoutes.cartMain);
+
+    //Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => LiveCartPage()));
+  }
+
+  _makingPhoneCall() async {
+    var url = Uri.parse("tel:9804450397");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     //final dummyList = List.generate(5, (index) => CatalogModel.products[0]);
@@ -40,6 +58,33 @@ class _HomePageState extends State<HomePage> {
           "Retailershakti",
           style: TextStyle(color: Colors.white),
         ),
+        /*leading: GestureDetector(
+          onTap: () { *//* Write listener code here *//* },
+          child: Icon(
+            Icons.menu,  // add custom icons also
+          ),
+        ),*/
+        actions: <Widget>[
+          Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: _makingPhoneCall,
+                child: const Icon(
+                  Icons.call,
+                  size: 26.0,
+                ),
+              )
+          ),
+          Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: moveToCart,
+                child: const Icon(
+                    Icons.shopping_cart
+                ),
+              )
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

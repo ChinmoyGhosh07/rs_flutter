@@ -10,7 +10,7 @@ class MyTheme{
         toolbarTextStyle: Theme.of(context).textTheme.bodyText2,
         titleTextStyle: Theme.of(context).textTheme.headline6
     ),
-    primarySwatch: Colors.deepPurple,
+    primarySwatch: Colors.blue,
     //fontFamily: GoogleFonts
   );
 
