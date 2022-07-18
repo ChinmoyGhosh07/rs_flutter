@@ -4,10 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:retailershakti_flutter/api_service/auth/auth_client.dart';
 import 'package:retailershakti_flutter/login/presentation/forgot_password.dart';
+import 'package:retailershakti_flutter/login/view_model/login_view_model.dart';
 
 import 'package:retailershakti_flutter/utils/routes.dart';
 
-import '../provider/auth_provider.dart';
 
 class LoginPage extends StatefulWidget{
   @override
@@ -52,7 +52,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
 
-    //AuthProvider auth = Provider.of<AuthProvider>(context);
+    final loginViewModel = Provider.of<LoginViewModel>(context);
+
 
     submit() async {
 

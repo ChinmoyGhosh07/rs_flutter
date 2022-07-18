@@ -5,7 +5,7 @@ import 'package:retailershakti_flutter/home/home_page.dart';
 import 'package:retailershakti_flutter/home/home_web_landing.dart';
 import 'package:retailershakti_flutter/home/splash_page.dart';
 import 'package:retailershakti_flutter/login/presentation/login_page.dart';
-import 'login/provider/auth_provider.dart';
+import 'login/view_model/login_view_model.dart';
 import 'utils/routes.dart';
 import 'widgets/themes.dart';
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_)=> AuthProvider())
+      ChangeNotifierProvider(create: (_)=> LoginViewModel())
     ],
       child: MaterialApp(
         /*if specify home then remove "/" do not keep both*/
